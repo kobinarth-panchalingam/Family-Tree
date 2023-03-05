@@ -1,0 +1,48 @@
+/* border color */
+div.bft-light .bft-input > input {
+  border-color: rgb(144, 148, 152);
+}
+
+/* input field on focus */
+div.bft-light .bft-input > input:focus {
+  border-color: rgb(63, 61, 66);
+  color: #000;
+}
+
+/* the search label on focus */
+.bft-light .bft-input > label.focused,
+.bft-dark .bft-input > label.focused {
+  color: rgb(74, 75, 78) !important;
+}
+
+/* the hovered search resutt */
+/* .bft-light .bft-search [data-search-item-id]:hover,
+.bft-light .bft-search [data-selected="yes"] {
+  background-color: green !important;
+} */
+bft-input-btn [data-l-id] path {
+  stroke: #9398ac;
+}
+
+/* [data-ctrl-menu] {
+  position: absolute !important;
+  right: 25px !important;
+  top: 11px !important;
+  width: 40px !important;
+  height: 30px !important;
+  cursor: pointer;
+} */
+
+[data-ctrl-menu] hr {
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
+  background-color: #000000 !important;
+}
+
+[bft-input-btn] a {
+  color: black;
+}
+
+.hasval {
+  color: rgb(10, 71, 145) !important;
+}
