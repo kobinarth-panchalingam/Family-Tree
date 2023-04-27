@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Axios from "axios";
 import FamilyTree from "./components/mytree";
-import { Component, useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // export default class App extends Component {
 //   constructor(props) {
 //     super(props);
@@ -100,7 +100,7 @@ function App() {
   const [nodes, setNodes] = useState([]);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    Axios.get(`https://family-tree-backend-lxbc.onrender.com/api/nodes/getAllNodes`).then((response) => {
+    Axios.get(`${process.env.REACT_APP_API_URL}/api/nodes/getAllNodes`).then((response) => {
       setNodes(response.data);
       setShow(true);
     });
