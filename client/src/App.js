@@ -100,7 +100,7 @@ function App() {
   const [nodes, setNodes] = useState([]);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    Axios.get(`${process.env.REACT_APP_API_URL}/api/nodes/getAllNodes`).then((response) => {
+    Axios.get(`https://family-tree-backend-lxbc.onrender.com/api/nodes/getAllNodes`).then((response) => {
       setNodes(response.data);
       setShow(true);
     });
