@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 const fs = require("fs");
+var path = require("path");
 
 //create connection
 const db = mysql.createConnection({
@@ -9,7 +10,7 @@ const db = mysql.createConnection({
   database: process.env.DB_DATABASE,
   port: process.env.DB_PORT,
   ssl: {
-    ca: fs.readFileSync("C:/Users/kobin/OneDrive/Desktop/Family-Tree/server/config/DigiCertGlobalRootCA.crt.pem"),
+    ca: fs.readFileSync(path.resolve(__dirname, "DigiCertGlobalRootCA.crt.pem")),
   },
 });
 
