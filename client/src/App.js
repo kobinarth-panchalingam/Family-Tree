@@ -101,14 +101,12 @@ function App() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     Axios.get(`${process.env.REACT_APP_API_URL}/api/nodes/getAllNodes`).then((response) => {
+      console.log(response.data);
       setNodes(response.data);
       setShow(true);
     });
   }, []);
 
-  // useEffect(() => {
-  //   console.log("nodes", nodes);
-  // }, [nodes]);
   return <div style={{ height: "100vh" }}>{show && <FamilyTree nodes={nodes} />}</div>;
 }
 

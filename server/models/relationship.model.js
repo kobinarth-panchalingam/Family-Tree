@@ -1,21 +1,28 @@
-const db = require("../config/db.config");
-const relationships = function () {};
+const mongoose = require("mongoose");
 
-relationships.getAllRelationships = (result) => {
-  const sqlGet = "SELECT * FROM relationships;";
-  db.query(sqlGet, (err, res) => {
-    if (err) {
-      result(null, err);
-      return;
-    }
+const relationshipSchema = new mongoose.Schema({
+  relationship_id: {
+    type: Number,
+    ref: "Person",
+  },
+  source_id: {
+    type: Number,
+    ref: "Person",
+  },
+  target_id: {
+    type: Number,
+    ref: "Person",
+  },
+  type: {
+    type: String,
+    enum: ["mother", "father", "spouse"],
+  },
+  description: {
+    type: String,
+  },
+  date: {
+    type: Date,
+  },
+});
 
-    if (res.length) {
-      result(null, res);
-      return;
-    } else {
-      result({ kind: "not_found" }, null);
-    }
-  });
-};
-
-module.exports = relationships;
+module.exports = mongoose.model("Relationships", relationshipSchema);

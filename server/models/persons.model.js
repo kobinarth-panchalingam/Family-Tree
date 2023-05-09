@@ -1,22 +1,32 @@
-const db = require("../config/db.config");
-const persons = function () {};
+const mongoose = require("mongoose");
 
-persons.getAllPersons = (result) => {
-  const sqlGet =
-    "select p.id, p.name, p.gender, DATE_FORMAT(p.birth_date, '%Y-%M-%d') as 'Date of Birth', p.description, p.nick_name, p.image from persons p";
-  db.query(sqlGet, (err, res) => {
-    if (err) {
-      result(null, err);
-      return;
-    }
+const personSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  gender: {
+    type: String,
+    enum: ["m", "f"],
+  },
+  birth_date: {
+    type: Date,
+  },
+  death_date: {
+    type: Date,
+  },
+  description: {
+    type: String,
+  },
+  nick_name: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
+});
 
-    if (res.length) {
-      result(null, res);
-      return;
-    } else {
-      result({ kind: "not_found" }, null);
-    }
-  });
-};
-
-module.exports = persons;
+module.exports = mongoose.model("Persons", personSchema);
