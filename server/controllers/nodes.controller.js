@@ -30,7 +30,6 @@ exports.getAllNodes = async (req, res) => {
       if (relation.type === "spouse") {
         nodes[relation.target_id].pids = [relation.source_id];
         nodes[relation.source_id].pids = [relation.target_id];
-        // console.log(nodes);
       } else if (relation.type === "father") {
         nodes[relation.target_id].fid = relation.source_id;
       } else {
