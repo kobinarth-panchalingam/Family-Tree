@@ -34,12 +34,12 @@ Follow these steps to set up the project:
 
 - Navigate to the backend directory and install dependencies:
   ```
-  cd backend
+  cd server
   npm install
   ```
 - Start the backend server:
   ```
-  node server.js
+  node index.js
   ```
 
 3. Frontend (React):
@@ -47,7 +47,7 @@ Follow these steps to set up the project:
 - Navigate to the frontend directory and install dependencies:
 
   ```
-  cd frontend
+  cd client
   npm install
   ```
 
