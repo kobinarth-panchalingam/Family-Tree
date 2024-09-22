@@ -6,12 +6,12 @@ const app = express();
 const mongoose = require("mongoose");
 dotenv.config();
 
-const nodes_route = require("./routes/nodes.route");
+const nodesRoute = require("./routes/nodes.route");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
-app.use("/api/nodes", nodes_route);
+app.use("/api/nodes", nodesRoute);
 
 mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })

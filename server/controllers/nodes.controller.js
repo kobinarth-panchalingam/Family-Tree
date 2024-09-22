@@ -1,5 +1,5 @@
-const persons_model = require("../models/persons.model");
-const relationships_model = require("../models/relationship.model");
+const personsModel = require("../models/persons.model");
+const relationshipModel = require("../models/relationship.model");
 
 exports.getAllNodes = async (req, res) => {
   nodes = {};
@@ -7,8 +7,8 @@ exports.getAllNodes = async (req, res) => {
   let relationships = null;
 
   try {
-    persons = await persons_model.find({}, { _id: 0 }).lean();
-    relationships = await relationships_model.find({}, { _id: 0 }).lean();
+    persons = await personsModel.find({}, { _id: 0 }).lean();
+    relationships = await relationshipModel.find({}, { _id: 0 }).lean();
   } catch (err) {
     console.error(err);
     res.status(500).send({ message: "Error retrieving data" });
