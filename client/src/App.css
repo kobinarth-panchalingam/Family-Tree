@@ -1,44 +1,33 @@
-/* .App {
-  text-align: center;
+border color div.bft-light .bft-input>input {
+    border-color: rgb(144, 148, 152);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* input field on focus */
+div.bft-light .bft-input>input:focus {
+    border-color: rgb(63, 61, 66);
+    color: #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* the search label on focus */
+.bft-light .bft-input>label.focused,
+.bft-dark .bft-input>label.focused {
+    color: rgb(74, 75, 78) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+bft-input-btn [data-l-id] path {
+    stroke: #9398ac;
 }
 
-.App-link {
-  color: #61dafb;
+[data-ctrl-menu] hr {
+    margin-top: 4px !important;
+    margin-bottom: 10px !important;
+    background-color: #000000 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+[bft-input-btn] a {
+    color: black;
+}
 
-html {
-  /* overflow: hidden  ; */
-  height: 100%;
-  /* height: 800px; */
+.hasval {
+    color: rgb(10, 71, 145) !important;
 }
